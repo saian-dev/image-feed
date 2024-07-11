@@ -32,6 +32,8 @@ final class ImagesListViewController: UIViewController {
         
         let imageName: String = indexPath.row % 2 == 0 ? "fav_on" : "fav_off"
         cell.likeButton?.setImage(UIImage(named: imageName), for: .normal)
+        
+        cell.selectionStyle = .none
     }
 }
 
