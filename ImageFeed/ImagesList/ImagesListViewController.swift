@@ -34,6 +34,19 @@ final class ImagesListViewController: UIViewController {
         cell.likeButton?.setImage(UIImage(named: imageName), for: .normal)
         
         cell.selectionStyle = .none
+        
+        if let gradientView = cell.gradientView, let dateLabel = cell.dateLabel {
+            let gradient = CAGradientLayer()
+            gradient.colors = [
+                UIColor(hex: "#1A1B2200")?.cgColor ?? UIColor.red.cgColor,
+                UIColor(hex: "#1A1B2233")?.cgColor ?? UIColor.blue.cgColor
+            ]
+            gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+            gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+            
+            gradient.frame = gradientView.bounds
+            gradientView.layer.addSublayer(gradient)
+        }
     }
 }
 

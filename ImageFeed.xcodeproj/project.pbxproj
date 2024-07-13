@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF63148F2C4299FA00166155 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63148E2C4299FA00166155 /* UIColor+HEX.swift */; };
 		AFBE03F42C288E85003F8011 /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE03F32C288E85003F8011 /* ImagesListViewController.swift */; };
 		AFC23DA82C39701B005FAE29 /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC23DA72C39701B005FAE29 /* ImagesListCell.swift */; };
 		AFC23DAA2C397D79005FAE29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B2702BB9855D00EFC5D4 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF63148E2C4299FA00166155 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		AFBE03F32C288E85003F8011 /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
 		AFC23DA72C39701B005FAE29 /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 		AFD7B2672BB9855D00EFC5D4 /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF63148D2C4299E200166155 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AF63148E2C4299FA00166155 /* UIColor+HEX.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AFC23DA92C397041005FAE29 /* ImagesList */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		AFD7B2692BB9855D00EFC5D4 /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				AF63148D2C4299E200166155 /* Extension */,
 				AFD7B26A2BB9855D00EFC5D4 /* AppDelegate.swift */,
 				AFD7B26C2BB9855D00EFC5D4 /* SceneDelegate.swift */,
 				AFD7B2702BB9855D00EFC5D4 /* Main.storyboard */,
@@ -152,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFD7B26B2BB9855D00EFC5D4 /* AppDelegate.swift in Sources */,
+				AF63148F2C4299FA00166155 /* UIColor+HEX.swift in Sources */,
 				AFC23DA82C39701B005FAE29 /* ImagesListCell.swift in Sources */,
 				AFBE03F42C288E85003F8011 /* ImagesListViewController.swift in Sources */,
 				AFD7B26D2BB9855D00EFC5D4 /* SceneDelegate.swift in Sources */,
