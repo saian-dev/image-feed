@@ -63,6 +63,14 @@
                                                         <constraint firstItem="5Wb-5R-qo8" firstAttribute="leading" secondItem="Pf2-yG-n3H" secondAttribute="leading" constant="8" id="rg2-nZ-VcM"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Wb-5R-qo8" secondAttribute="trailing" constant="8" id="tmZ-jd-g7t"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

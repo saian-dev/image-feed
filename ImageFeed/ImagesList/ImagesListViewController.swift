@@ -38,14 +38,16 @@ final class ImagesListViewController: UIViewController {
         if let gradientView = cell.gradientView, let dateLabel = cell.dateLabel {
             let gradient = CAGradientLayer()
             gradient.colors = [
-                UIColor(hex: "#1A1B2200")?.cgColor ?? UIColor.red.cgColor,
-                UIColor(hex: "#1A1B2233")?.cgColor ?? UIColor.blue.cgColor
+                UIColor(hex: "#1A1B2233")!.cgColor,
+                UIColor(hex: "#1A1B2200")!.cgColor,
             ]
-            gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
-            gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+            gradient.locations = [0.0, 0.3]
+            gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
             
             gradient.frame = gradientView.bounds
             gradientView.layer.addSublayer(gradient)
+            gradientView.bringSubviewToFront(dateLabel)
         }
     }
 }
