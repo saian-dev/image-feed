@@ -2,6 +2,7 @@ import UIKit
 
 
 final class ImagesListViewController: UIViewController {
+    private let showSingleImageSegueIdentifier = "ShowSingleImage"
 
     @IBOutlet private var tableView: UITableView!
     
@@ -50,6 +51,23 @@ final class ImagesListViewController: UIViewController {
             gradientView.bringSubviewToFront(dateLabel)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == showSingleImageSegueIdentifier { // 1
+            guard
+                let viewController = segue.destination as? SingleImageViewController, // 2
+                let indexPath = sender as? IndexPath // 3
+            else {
+                assertionFailure("Invalid segue destination") // 4
+                return
+            }
+
+            let image = UIImage(named: photosNames[indexPath.row]) // 5
+            viewController.image = image // 6
+        } else {
+            super.prepare(for: segue, sender: sender) // 7
+        }
+    }
 }
 
 extension ImagesListViewController: UITableViewDelegate {
@@ -64,6 +82,10 @@ extension ImagesListViewController: UITableViewDelegate {
         let scale = imageViewWidth / imageWidth
         let cellHeight = image.size.height * scale + imageInsets.top + imageInsets.bottom
         return cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: showSingleImageSegueIdentifier, sender: indexPath)
     }
 }
 

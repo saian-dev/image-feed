@@ -1,8 +1,8 @@
-//
-//  ProfileViewController.swift
-//  ImageFeed
-//
-//  Created by Саян Бадарчы on 28.07.2024.
-//
+import UIKit
 
-import Foundation
+
+final class ProfileViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
