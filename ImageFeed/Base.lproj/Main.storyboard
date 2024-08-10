@@ -210,62 +210,9 @@
                     <view key="view" contentMode="scaleToFill" id="lZi-gp-2ic">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Екатерина Новикова" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c1-a4-XQM" userLabel="Name Label">
-                                <rect key="frame" x="16" y="166" width="216.5" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" name="YP White"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@ekaterina_nov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-c2-XLc" userLabel="Username Label">
-                                <rect key="frame" x="16" y="201" width="97" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="YP Gray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello, world!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXI-wY-3fQ" userLabel="Summary Label">
-                                <rect key="frame" x="16" y="225" width="76" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="YP White"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profiles" translatesAutoresizingMaskIntoConstraints="NO" id="6bW-sr-Zey" userLabel="UserProfile Image">
-                                <rect key="frame" x="16" y="80" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="JLj-WG-Hbv"/>
-                                    <constraint firstAttribute="width" constant="70" id="eYs-fX-KeP"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkx-Hf-HZC" userLabel="ExitProfile Button">
-                                <rect key="frame" x="374" y="103" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="cXv-Ya-oGi"/>
-                                    <constraint firstAttribute="width" constant="24" id="yq0-Ai-mfZ"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="ipad.and.arrow.forward" catalog="system">
-                                    <color key="titleColor" name="YP Red"/>
-                                </state>
-                                <buttonConfiguration key="configuration" style="plain" image="ipad.and.arrow.forward" catalog="system">
-                                    <color key="baseForegroundColor" name="YP Red"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kei-By-7nB"/>
                         <color key="backgroundColor" name="YP Background"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6bW-sr-Zey" firstAttribute="top" secondItem="kei-By-7nB" secondAttribute="top" constant="32" id="3ZK-c4-vFp"/>
-                            <constraint firstItem="6c1-a4-XQM" firstAttribute="top" secondItem="6bW-sr-Zey" secondAttribute="bottom" constant="8" id="4VK-jU-Cku"/>
-                            <constraint firstItem="Nii-c2-XLc" firstAttribute="top" secondItem="6c1-a4-XQM" secondAttribute="bottom" constant="8" id="7D4-4D-Nsn"/>
-                            <constraint firstItem="kei-By-7nB" firstAttribute="trailing" secondItem="kkx-Hf-HZC" secondAttribute="trailing" constant="16" id="DRl-2z-xdJ"/>
-                            <constraint firstItem="Nii-c2-XLc" firstAttribute="leading" secondItem="kei-By-7nB" secondAttribute="leading" constant="16" id="N0X-kk-gtw"/>
-                            <constraint firstItem="6bW-sr-Zey" firstAttribute="leading" secondItem="kei-By-7nB" secondAttribute="leading" constant="16" id="S2E-gd-urd"/>
-                            <constraint firstItem="kkx-Hf-HZC" firstAttribute="top" secondItem="kei-By-7nB" secondAttribute="top" constant="55" id="SMS-EL-7Cd"/>
-                            <constraint firstItem="XXI-wY-3fQ" firstAttribute="leading" secondItem="kei-By-7nB" secondAttribute="leading" constant="16" id="Ze1-WB-Is7"/>
-                            <constraint firstItem="6c1-a4-XQM" firstAttribute="leading" secondItem="kei-By-7nB" secondAttribute="leading" constant="16" id="rio-Xd-Xhe"/>
-                            <constraint firstItem="XXI-wY-3fQ" firstAttribute="top" secondItem="Nii-c2-XLc" secondAttribute="bottom" constant="8" id="zIF-sj-w6T"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tab_profile_active" id="SHm-1o-uXk"/>
                 </viewController>
@@ -277,8 +224,6 @@
     <resources>
         <image name="18" width="854" height="1280"/>
         <image name="4" width="1878" height="1080"/>
-        <image name="Profiles" width="350" height="350"/>
-        <image name="ipad.and.arrow.forward" catalog="system" width="117" height="128"/>
         <image name="nav_go_back" width="24" height="24"/>
         <image name="sharing_btn" width="51" height="51"/>
         <image name="tab_editorial_active" width="30" height="30"/>
@@ -288,12 +233,6 @@
         </namedColor>
         <namedColor name="YP Black">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="YP Gray">
-            <color red="0.68199998140335083" green="0.68599998950958252" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="YP Red">
-            <color red="0.96100002527236938" green="0.41999998688697815" blue="0.42399999499320984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="YP White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
