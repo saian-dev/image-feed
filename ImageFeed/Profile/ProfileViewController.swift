@@ -52,7 +52,11 @@ final class ProfileViewController: UIViewController {
     }
     
     private func createExitButton() -> UIButton {
-        let exitButton = UIButton.systemButton(with: UIImage(systemName: "ipad.and.arrow.forward")!, target: self, action: nil)
+        let exitButton = UIButton.systemButton(
+            with: UIImage(systemName: "ipad.and.arrow.forward")!,
+            target: self,
+            action: nil
+        )
         exitButton.translatesAutoresizingMaskIntoConstraints = false
         exitButton.tintColor = UIColor(named: "YP Red") ?? UIColor.red
         
