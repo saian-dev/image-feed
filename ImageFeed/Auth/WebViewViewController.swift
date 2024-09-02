@@ -55,7 +55,7 @@ final class WebViewViewController: UIViewController {
     }
     
     private func loadAuthView() {
-        guard var urlComponents = URLComponents(string: Constants.unsplashAuthorizeURLString) else {
+        guard var urlComponents = URLComponents(string: Constants.unsplashAuthorizeURL) else {
             return
         }
 
@@ -90,13 +90,11 @@ extension WebViewViewController: WKNavigationDelegate {
         }
     }
     
-    
-    
     private func code(from navigationAction: WKNavigationAction) -> String? {
         if
             let url = navigationAction.request.url,
             let urlComponents = URLComponents(string: url.absoluteString),
-            urlComponents.path == "/oauth/authorize/native",
+            urlComponents.path == Constants.unsplashAuthCodeURLPath,
             let items = urlComponents.queryItems,
             let codeItem = items.first(where: { $0.name == "code" })
         {
