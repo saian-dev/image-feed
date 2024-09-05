@@ -1,18 +1,16 @@
 import UIKit
 import WebKit
 
-
 protocol WebViewViewControllerDelegate: AnyObject  {
     func webViewViewController(_ vc: WebViewViewController, didAuthenticateWithCode code: String)
     func webViewViewControllerDidCancel(_ vc: WebViewViewController)
 }
 
-
 final class WebViewViewController: UIViewController {
+    weak var delegate: WebViewViewControllerDelegate?
+    
     @IBOutlet private var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
-    
-    weak var delegate: WebViewViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +72,6 @@ final class WebViewViewController: UIViewController {
         webView.load(request)
     }
 }
-
 
 extension WebViewViewController: WKNavigationDelegate {
     func webView(

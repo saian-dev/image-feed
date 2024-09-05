@@ -1,15 +1,13 @@
 import UIKit
 
-
 protocol AuthViewControllerDelegate: AnyObject {
     func didAuthenticate(_ vc: AuthViewController)
 }
 
-
 final class AuthViewController: UIViewController {
-    private let showWebViewSegueIdentifier = "ShowWebView"
-    
     weak var delegate: AuthViewControllerDelegate?
+    
+    private let showWebViewSegueIdentifier = "ShowWebView"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +18,10 @@ final class AuthViewController: UIViewController {
         if segue.identifier == showWebViewSegueIdentifier {
             guard
                 let webViewViewController = segue.destination as? WebViewViewController
-            else { fatalError("Failed to prepare for \(showWebViewSegueIdentifier)") }
+            else {
+                assertionFailure("Failed to prepare for \(showWebViewSegueIdentifier)")
+                return
+            }
             webViewViewController.delegate = self
         } else {
             super.prepare(for: segue, sender: sender)
@@ -35,16 +36,18 @@ final class AuthViewController: UIViewController {
     }
 }
 
-
 extension AuthViewController: WebViewViewControllerDelegate {
     func webViewViewController(_ vc: WebViewViewController, didAuthenticateWithCode code: String) {
         vc.dismiss(animated: true)
         
-        OAuth2Service.shared.fetchOAuthToken(withCode: code) { result in
+        OAuth2Service.shared.fetchOAuthToken(withCode: code) { [weak self] result in
             switch result {
             case .success(let token):
                 OAuth2TokenStorage.shared.accessToken = token
                 print("token: \(token)")
+                
+                guard let self = self else { return }
+                
                 self.delegate?.didAuthenticate(self)
             case .failure(let error):
                 print("Failed to get token")

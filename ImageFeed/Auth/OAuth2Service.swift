@@ -1,6 +1,5 @@
 import Foundation
 
-
 final class OAuth2Service {
     static let shared = OAuth2Service()
     private init() {}
@@ -13,7 +12,7 @@ final class OAuth2Service {
             switch result {
             case .success(let data):
                 do {
-                    let body = try JSONDecoder().decode(OAuthTokenResponseBody.self, from: data)
+                    let body = try SnakeCaseJSONDecoder().decode(OAuthTokenResponseBody.self, from: data)
                     completion(.success(body.accessToken))
                 } catch {
                     completion(.failure(error))
@@ -40,7 +39,9 @@ final class OAuth2Service {
             URLQueryItem(name: "grant_type", value: "authorization_code"),
         ]
         
-        var request = URLRequest(url: urlComponents!.url!)
+        guard let url = urlComponents?.url else { return nil }
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         return request
     }

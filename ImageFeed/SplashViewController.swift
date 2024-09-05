@@ -1,6 +1,5 @@
 import UIKit
 
-
 final class SplashViewController: UIViewController {
     private let showAuthenticationScreenSegueIdentifier = "showAuthenticationScreen"
     private let tabBarViewControllerStoryboardId = "TabBarViewController"
@@ -48,11 +47,9 @@ final class SplashViewController: UIViewController {
     }
 }
 
-
 extension SplashViewController: AuthViewControllerDelegate {
     func didAuthenticate(_ vc: AuthViewController) {
         vc.dismiss(animated: true)
         switchToTabBarController()
     }
-
 }

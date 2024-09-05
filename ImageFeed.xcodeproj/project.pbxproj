@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF3B42212C810A2C003E3413 /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B42202C810A2C003E3413 /* OAuth2Service.swift */; };
+		AF5018112C89A2C600BD100B /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5018102C89A2BE00BD100B /* Decoders.swift */; };
 		AF5B0EEC2C87A7530017DBB0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B0EEB2C87A7530017DBB0 /* SplashViewController.swift */; };
 		AF63148F2C4299FA00166155 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63148E2C4299FA00166155 /* UIColor+HEX.swift */; };
 		AF7E48192C864530005824FC /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E48182C864530005824FC /* OAuth2TokenStorage.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		AF3B42202C810A2C003E3413 /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
+		AF5018102C89A2BE00BD100B /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
 		AF5B0EEB2C87A7530017DBB0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AF63148E2C4299FA00166155 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		AF7E48182C864530005824FC /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF50180F2C89A2B700BD100B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AF5018102C89A2BE00BD100B /* Decoders.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AF63148D2C4299E200166155 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		AFD7B2692BB9855D00EFC5D4 /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				AF50180F2C89A2B700BD100B /* Utils */,
 				AFB3585E2C7B688E00FE3CE4 /* Auth */,
 				AFC23DA92C397041005FAE29 /* ImagesList */,
 				AF8980D82C59FA1100DC244F /* SingleImage */,
@@ -218,6 +229,7 @@
 			files = (
 				AFB358642C7BA93000FE3CE4 /* WebViewViewController.swift in Sources */,
 				AFDC5DD82C565942005ACCC2 /* ProfileViewController.swift in Sources */,
+				AF5018112C89A2C600BD100B /* Decoders.swift in Sources */,
 				AFD7B26B2BB9855D00EFC5D4 /* AppDelegate.swift in Sources */,
 				AF63148F2C4299FA00166155 /* UIColor+HEX.swift in Sources */,
 				AF3B42212C810A2C003E3413 /* OAuth2Service.swift in Sources */,
