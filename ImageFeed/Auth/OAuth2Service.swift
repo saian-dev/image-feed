@@ -5,23 +5,23 @@ final class OAuth2Service {
     static let shared = OAuth2Service()
     private init() {}
 
-    func fetchOAuthToken(withCode code: String) {
+    func fetchOAuthToken(withCode code: String, completion: @escaping (Result<String, Error>) -> Void) {
         let request = buildOAuthRequest(code: code)
         guard let request else { return }
         
-        let urlSessionTask = URLSession.shared.data(for: request, completion: {result in
+        let urlSessionTask = URLSession.shared.data(for: request) {result in
             switch result {
             case .success(let data):
                 do {
                     let body = try JSONDecoder().decode(OAuthTokenResponseBody.self, from: data)
-                    OAuth2TokenStorage.shared.accessToken = body.accessToken
+                    completion(.success(body.accessToken))
                 } catch {
-                    print(error)
+                    completion(.failure(error))
                 }
             case .failure(let error):
-                print(error)
+                completion(.failure(error))
             }
-        })
+        }
         
         urlSessionTask.resume()
     }
