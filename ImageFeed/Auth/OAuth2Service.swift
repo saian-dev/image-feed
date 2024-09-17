@@ -1,14 +1,51 @@
 import Foundation
 
+enum AuthServiceError: LocalizedError {
+    case invalidRequest(msg: String)
+    
+    var failureReason: String? {
+        switch self {
+        case .invalidRequest(let msg):
+            return "Invalid Request: \(msg)"
+        }
+    }
+    
+    var recoverySuggestion: String? {
+        switch self {
+        case .invalidRequest(let msg):
+            return "Please, try again."
+        }
+    }
+}
+
+
 final class OAuth2Service {
     static let shared = OAuth2Service()
+    
+    private var task: URLSessionTask?
+    private var lastCode: String?
+    
     private init() {}
 
     func fetchOAuthToken(withCode code: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let request = buildOAuthRequest(code: code)
-        guard let request else { return }
+        assert(Thread.isMainThread)
         
-        let urlSessionTask = URLSession.shared.data(for: request) {result in
+        guard lastCode != code else {
+            completion(.failure(AuthServiceError.invalidRequest(msg: "Duplicated requests are not allowed.")))
+            return
+        }
+        
+        task?.cancel()
+        lastCode = code
+        
+        guard
+            let request = buildOAuthRequest(code: code)
+        else {
+            completion(.failure(AuthServiceError.invalidRequest(msg: "Failed to build URL.")))
+            return
+        }
+
+        let task = URLSession.shared.data(for: request) {[weak self] result in
             switch result {
             case .success(let data):
                 do {
@@ -20,9 +57,12 @@ final class OAuth2Service {
             case .failure(let error):
                 completion(.failure(error))
             }
+            
+            self?.task = nil
+            self?.lastCode = nil
         }
-        
-        urlSessionTask.resume()
+        self.task = task
+        task.resume()
     }
     
     private func buildOAuthRequest(code: String) -> URLRequest? {
