@@ -5,6 +5,12 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let profile = ProfileService.shared.profile else { return }
+        
+        buildUserProfile(profile: profile)
+    }
+    
+    private func buildUserProfile(profile: Profile) {
         let profileImageView = createProfileImage()
         
         view.addSubview(profileImageView)

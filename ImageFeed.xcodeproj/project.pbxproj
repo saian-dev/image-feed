@@ -29,6 +29,7 @@
 		AFDC5DD82C565942005ACCC2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC5DD72C565942005ACCC2 /* ProfileViewController.swift */; };
 		AFEBE5E62C84880C005C2E44 /* URLSession+data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBE5E52C84880C005C2E44 /* URLSession+data.swift */; };
 		AFEBE5E82C84894F005C2E44 /* OAuthTokenResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBE5E72C84894F005C2E44 /* OAuthTokenResponseBody.swift */; };
+		AFF268802C9E069A0026A861 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF2687F2C9E06910026A861 /* ProfileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		AFDC5DD72C565942005ACCC2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AFEBE5E52C84880C005C2E44 /* URLSession+data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+data.swift"; sourceTree = "<group>"; };
 		AFEBE5E72C84894F005C2E44 /* OAuthTokenResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthTokenResponseBody.swift; sourceTree = "<group>"; };
+		AFF2687F2C9E06910026A861 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		AFDC5DD62C56592C005ACCC2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				AFF2687F2C9E06910026A861 /* ProfileService.swift */,
 				AFDC5DD72C565942005ACCC2 /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -246,6 +249,7 @@
 				AF8980D72C59F5FC00DC244F /* SingleImageViewController.swift in Sources */,
 				AFC23DA82C39701B005FAE29 /* ImagesListCell.swift in Sources */,
 				AF5B0EEC2C87A7530017DBB0 /* SplashViewController.swift in Sources */,
+				AFF268802C9E069A0026A861 /* ProfileService.swift in Sources */,
 				AFBE03F42C288E85003F8011 /* ImagesListViewController.swift in Sources */,
 				AFEBE5E62C84880C005C2E44 /* URLSession+data.swift in Sources */,
 				AFD7B26D2BB9855D00EFC5D4 /* SceneDelegate.swift in Sources */,
